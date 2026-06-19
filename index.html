@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIJT | Beleza Sofisticada</title>
+
+<style>
+
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#000;
+    color:#fff;
+}
+
+/* ===== MENU ===== */
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.9);
+    border-bottom:1px solid gold;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    color:gold;
+    letter-spacing:5px;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:gold;
+}
+
+/* ===== BANNER ===== */
+.banner{
+    height:150vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+    url('https://i.pinimg.com/736x/00/9e/6a/009e6a4d267b0309099cac9bde621d85.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.banner-content h1{
+    font-size:150px;
+    color:gold;
+    text-shadow:0 0 20px rgba(255,215,0,0.8);
+    margin-bottom:20px;
+}
+
+.banner-content p{
+    font-size:24px;
+    color:#fff;
+    margin-bottom:30px;
+}
+
+.banner-content button{
+    padding:15px 40px;
+    border:none;
+    background:gold;
+    color:black;
+    font-size:18px;
+    border-radius:40px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.banner-content button:hover{
+    transform:scale(1.08);
+    background:white;
+}
+
+/* ===== TÍTULOS ===== */
+.section-title{
+    text-align:center;
+    font-size:45px;
+    color:gold;
+    margin-bottom:50px;
+}
+
+/* ===== PRODUTOS ===== */
+.produtos{
+    padding:150px 8%;
+    background:#050505;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:150px;
+}
+
+.card{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    border:1px solid rgba(255,215,0,0.2);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(255,215,0,0.4);
+}
+
+.card img{
+    width:150%;
+    height:120px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+    text-align:center;
+}
+
+.card-content h3{
+    color:gold;
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.card-content p{
+    color:#ddd;
+    line-height:1.6;
+}
+
+/* ===== GALERIA ===== */
+.galeria{
+    padding:150px 8%;
+    background:black;
+}
+
+.galeria-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:20px;
+}
+
+.galeria-grid img{
+    width:150%;
+    height:400px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.4s;
+    border:2px solid gold;
+}
+
+.galeria-grid img:hover{
+    transform:scale(1.03);
+}
+
+
+.formulario{
+    max-width:700px;
+    margin:auto;
+}
+
+.formulario input,
+.formulario textarea{
+    width:150%;
+    padding:18px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:10px;
+    background:#1b1b1b;
+    color:white;
+    font-size:16px;
+}
+
+.formulario textarea{
+    resize:none;
+    height:150px;
+}
+
+.formulario button{
+    width:100%;
+    padding:150px;
+    border:none;
+    border-radius:10px;
+    background:gold;
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.formulario button:hover{
+    background:white;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:black;
+    text-align:center;
+    padding:30px;
+    border-top:1px solid gold;
+}
+
+footer p{
+    color:white;
+}
+
+/* ===== RESPONSIVO ===== */
+@media(max-width:768px){
+
+    .banner-content h1{
+        font-size:70px;
+    }
+
+    .menu{
+        gap:150px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:150px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== MENU ===== -->
+<header>
+    <nav>
+        <div class="logo">BIJT</div>
+
+        <div class="menu">
+            <a href="#">Home</a>
+     <a href="/comprar.html">Carrinho</a>
+            <a href="/batom.html">Batom</a>
+            <a href="/produto.html">Produto</a>
+            <a href="/Iluminador.html">Iluminador</a>
+            <a href="/rosto.html">Rosto</a>
+            <a href="/pefume.html">Perfumes</a>
+        </div>
+    </nav>
+</header>
+
+<!-- ===== BANNER ===== -->
+<section class="banner">
+
+    <div class="banner-content">
+        <h1>BIJT</h1>
+
+        <p>
+            Venha conhecer o nosso brilho ✨
+        </p>
+
+        <button>Descobrir cada beleza em você</button>
+    </div>
+
+</section>
+
+<!-- ===== PRODUTOS ===== -->
+<section class="produtos">
+
+    <h2 class="section-title">Coleções Exclusivas</h2>
+
+    <div class="cards">
+
+        <div class="card" id="batom">
+            <img src="https://ecoms1.com/51331/@v3/1694641496619-48b77465a1644c1caf9bb47914089f65.jpg">
+
+            <div class="card-content">
+                <h3>Batom</h3>
+
+                <p>
+                    Tons sofisticados e acabamento radiante para realçar sua beleza.
+                </p>
+            </div>
+        </div>
+
+        <div class="card" id="paleta">
+            <img src="https://i.pinimg.com/736x/2a/3c/29/2a3c291f5c750f37506b696e43412d21.jpg">
+
+            <div class="card-content">
+                <h3>paleta</h3>
+
+                <p>
+                    Cores luxuosas e pigmentação intensa para maquiagens incríveis.
+                </p>
+            </div>
+        </div>
+
+        <div class="card" id="brilho">
+            <img src="https://i1-c.pinimg.com/736x/7e/31/9e/7e319e4ad6fc0e869f6b336202a26871.jpg">
+
+            <div class="card-content">
+                <h3>Brilho</h3>
+
+                <p>
+                    Iluminadores e gloss sofisticados para um efeito glamouroso.
+                </p>
+            </div>
+        </div>
+
+        <div class="card" id="rosto">
+            <img src="https://i.pinimg.com/736x/d7/85/90/d785906a5ce146b5d0043096987a8b12.jpg">
+
+            <div class="card-content">
+                <h3>Produtos para o Rosto</h3>
+
+                <p>
+                    Base, pó e blush premium para uma pele perfeita e elegante.
+                </p>
+            </div>
+        </div>
+
+        <div class="card" id="perfumes">
+            <img src="https://i1-c.pinimg.com/736x/c2/d9/fb/c2d9fb84e10de636632df4bb2e342d63.jpg">
+
+            <div class="card-content">
+                <h3>Perfumes</h3>
+
+                <p>
+                    Fragrâncias marcantes que combinam luxo e personalidade.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section class="galeria">
+
+    <h2 class="section-title">Nossa vibe BIJT</h2>
+
+    <div class="galeria-grid">
+
+        <img src="https://i.pinimg.com/736x/00/ab/4d/00ab4d0861d15f4fb57c52dfcac34c1b.jpg">
+
+        <img src="https://i1-c.pinimg.com/1200x/12/26/da/1226da559d207a131844a470720348b8.jpg">
+
+        <img src="https://i.pinimg.com/736x/a6/af/f0/a6aff0d2dc9310872fcfa5549ae9ab7f.jpg">
+
+    </div>
+
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>
+        © 2026 BIJT - Todos os direitos reservados ✨
+    </p>
+</footer>
+
+</body>
+</html>
+<!-- ===== MENU COM MUDANÇA DE PÁGINAS ===== -->
+
+<nav>
+
+    <a href="CONTATO:">CONTATO</a>
+
+    <a href="Instagram:@bijt.make">Instagram:@bijt.make</a>
+
+    <a href="Whatsapp:9817391820">Whatsapp:9817391820</a>
+
+    <a href="Tik Tok:@bijt.make">Tik Tok:@bijt.make</a>
+
+    <a href="Fecebook:@make.com bijt">Fecebook:@make.com bijt</a>
+
+</nav>
+
